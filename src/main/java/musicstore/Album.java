@@ -2,7 +2,7 @@ package musicstore;
 
 import java.util.Objects;
 
-public class Album {
+public class Album implements Identifiable<String> {
     private final String title;
     private final String artist;
     private final int year;
@@ -31,6 +31,11 @@ public class Album {
     public String getArtist() { return artist; }
     public int getYear() { return year; }
     public double getPrice() { return price; }
+
+    @Override
+    public String getId() {
+        return title;
+    }
 
     @Override
     public boolean equals(Object o) {
